@@ -5,7 +5,9 @@ import time
 
 st.set_page_config(page_title="Calorie Burn Predictor", layout="centered")
 
-model = joblib.load("calorie_model.pkl")
+from xgboost import XGBRegressor
+model = XGBRegressor()
+model.load_model("model.json")
 
 st.markdown("<h1 style='text-align: center;'>🔥 Calorie Burn Predictor</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Track your workout impact instantly</p>", unsafe_allow_html=True)
