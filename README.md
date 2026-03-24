@@ -1,25 +1,45 @@
 # 🔥 Calorie Burnt Analysis using Machine Learning
 
+## 🌐 Live Web App
+
+👉 https://wiztan-cal-burnt-analysis.streamlit.app/
+
+> Try the app by entering your details and instantly get a prediction of calories burned along with health insights.
+
+---
+
 ## 📌 Project Overview
 
-This project focuses on predicting the number of calories burned based on user-related features such as gender, physical attributes, and activity data. Multiple regression models are trained and compared to identify the most effective model.
+This project focuses on predicting the number of calories burned based on user-related features such as gender, age, physical attributes, and exercise data. Multiple machine learning models were trained and compared to identify the most effective approach.
+
+The final model is deployed as an interactive web application using Streamlit, allowing real-time predictions.
 
 ---
 
 ## 🎯 Objectives
 
-* Clean and preprocess the dataset
+* Perform data preprocessing and cleaning
 * Train multiple machine learning models
-* Evaluate models using regression metrics
-* Compare performance to determine the best model
+* Evaluate and compare model performance
+* Deploy the best model as a web application
 
 ---
 
 ## 📂 Dataset
 
 * File used: `calories.csv`
-* The dataset contains features related to user activity and physical parameters.
-* The target variable is:
+
+* Contains features like:
+
+  * Gender
+  * Age
+  * Height
+  * Weight
+  * Duration
+  * Heart Rate
+  * Body Temperature
+
+* Target variable:
 
   * **Calories burned**
 
@@ -30,65 +50,58 @@ This project focuses on predicting the number of calories burned based on user-r
 * Removed unnecessary column: `User_ID`
 * Encoded categorical feature:
 
-  * `Gender` → Male = 1, Female = 0
-* Split data into training and testing sets (80:20 ratio)
+  * Gender → Male = 1, Female = 0
+* Train-test split (80:20)
 
 ---
 
 ## 🧠 Models Implemented
 
-1. **Linear Regression**
-2. **Random Forest Regressor**
-3. **XGBoost Regressor**
+* Linear Regression
+* Random Forest Regressor
+* XGBoost Regressor
 
 ---
 
-## 📊 Model Evaluation Metrics
+## 📊 Model Evaluation
 
-Each model is evaluated using:
+Models were evaluated using:
 
 * Mean Absolute Error (MAE)
 * Root Mean Squared Error (RMSE)
 * R² Score
 
-A reusable evaluation function is implemented for consistency across models.
-
----
-
-## 📈 Visualization
-
-* Scatter plots of:
-
-  * Actual vs Predicted values
-* Helps in visually analyzing model performance
-
----
-
-## 📊 Model Comparison
-
-A comparison table is created showing:
-
-* MAE
-* RMSE
-* R² Score
-
-This allows direct comparison of all models.
+A comparison of all models was performed to determine the best-performing one.
 
 ---
 
 ## 🏆 Conclusion
 
-* Ensemble models like **Random Forest** and **XGBoost** generally perform better than Linear Regression.
-* These models capture non-linear relationships more effectively.
+* Ensemble models like **Random Forest** and **XGBoost** outperformed Linear Regression
+* These models handle non-linear relationships more effectively
+
+---
+
+## 💻 Web Application Features
+
+* Interactive input form for user data
+* Real-time calorie prediction
+* Activity level classification
+* BMI calculation and health insights
+* Clean and user-friendly interface
+
+> The app is built using Streamlit, a framework that enables quick development of interactive ML web apps ([Medium][1])
 
 ---
 
 ## 📁 Project Structure
 
 ```
-calorie-burnt-analysis/
+CalBurntAnalysis/
 │
 ├── CalBurntAnalysis.ipynb
+├── calorie_model.pkl
+├── app.py
 ├── calories.csv
 ├── requirements.txt
 └── README.md
@@ -96,13 +109,13 @@ calorie-burnt-analysis/
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Run Locally
 
 1. Clone the repository:
 
 ```
-git clone https://github.com/your-username/calorie-burnt-analysis.git
-cd calorie-burnt-analysis
+git clone https://github.com/Wiz-Tanay/CalBurntAnalysis.git
+cd CalBurntAnalysis
 ```
 
 2. Install dependencies:
@@ -111,29 +124,25 @@ cd calorie-burnt-analysis
 pip install -r requirements.txt
 ```
 
-3. Launch Jupyter Notebook:
+3. Run the app:
 
 ```
-jupyter notebook
-```
-
-4. Open:
-
-```
-CalBurntAnalysis.ipynb
+streamlit run app.py
 ```
 
 ---
 
-## 📌 Future Improvements
+## 🔮 Future Improvements
 
-* Hyperparameter tuning for better accuracy
-* Feature engineering for improved predictions
-* Deployment using Streamlit or Flask
-* Integration with real-time fitness tracking data
+* Hyperparameter tuning
+* Enhanced UI/UX design
+* Mobile optimization
+* Integration with real-time fitness trackers
 
 ---
 
 ## 👨‍💻 Author
 
 Tanay Pandey
+
+[1]: https://medium.com/%40t21016/revolutionize-your-data-analysis-with-streamlit-an-interactive-web-app-for-analyzing-huge-nwh-data-5640d2f12e78?utm_source=chatgpt.com "Revolutionize Your Data Analysis with Streamlit"
